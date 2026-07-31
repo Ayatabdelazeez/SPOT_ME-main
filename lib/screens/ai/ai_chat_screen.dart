@@ -1,4 +1,4 @@
-import 'dart:convert';
+ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../../utils/app_colors.dart';
@@ -169,8 +169,10 @@ class _AiChatScreenState extends State<AiChatScreen> {
                     controller: _controller,
                     textInputAction: TextInputAction.send,
                     onSubmitted: (_) => _sendMessage(),
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Ask AI Coach...",
+                      hintStyle: const TextStyle(color: Colors.white54),
                       filled: true,
                       fillColor: AppColors.card,
                       border: OutlineInputBorder(
@@ -221,3 +223,8 @@ class _Message extends StatelessWidget {
     );
   }
 }
+    
+
+      
+        
+     
