@@ -1,0 +1,38 @@
+{
+  "@@locale": "en",
+
+  "settings": "Settings",
+  "account": "ACCOUNT",
+
+  "editProfile": "Edit Profile",
+  "updateProfile": "Update your personal information",
+
+  "notifications": "Notifications",
+  "scoutNotifications": "Manage scout alerts & preferences",
+  "appNotifications": "Manage app notifications",
+
+  "language": "Language",
+
+  "support": "SUPPORT",
+  "helpCenter": "Help Center",
+  "faqSupport": "FAQs & contact support",
+
+  "privacyPolicy": "Privacy Policy",
+  "readPrivacy": "Read our privacy policy",
+
+  "termsConditions": "Terms & Conditions",
+  "appTerms": "Application terms of use",
+
+  "about": "ABOUT",
+  "aboutSpotMe": "About SpotMe",
+  "version": "Version 1.0.0",
+
+  "rateSpotMe": "Rate SpotMe",
+  "feedback": "Share your feedback",
+
+  "logout": "Logout",
+  "signOut": "Sign out from your account",
+
+  "scout": "Scout",
+  "footballPlayer": "Football Player"
+}

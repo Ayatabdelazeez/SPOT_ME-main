@@ -1,0 +1,38 @@
+{
+  "@@locale": "ar",
+
+  "settings": "الإعدادات",
+  "account": "الحساب",
+
+  "editProfile": "تعديل الملف الشخصي",
+  "updateProfile": "تحديث المعلومات الشخصية",
+
+  "notifications": "الإشعارات",
+  "scoutNotifications": "إدارة تنبيهات الكشاف والتفضيلات",
+  "appNotifications": "إدارة إشعارات التطبيق",
+
+  "language": "اللغة",
+
+  "support": "الدعم",
+  "helpCenter": "مركز المساعدة",
+  "faqSupport": "الأسئلة الشائعة والتواصل مع الدعم",
+
+  "privacyPolicy": "سياسة الخصوصية",
+  "readPrivacy": "اقرأ سياسة الخصوصية",
+
+  "termsConditions": "الشروط والأحكام",
+  "appTerms": "شروط استخدام التطبيق",
+
+  "about": "حول",
+  "aboutSpotMe": "حول SpotMe",
+  "version": "الإصدار 1.0.0",
+
+  "rateSpotMe": "قيّم SpotMe",
+  "feedback": "شاركنا رأيك",
+
+  "logout": "تسجيل الخروج",
+  "signOut": "الخروج من حسابك",
+
+  "scout": "كشاف",
+  "footballPlayer": "لاعب كرة قدم"
+}

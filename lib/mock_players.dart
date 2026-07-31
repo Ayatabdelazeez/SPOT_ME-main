@@ -1,0 +1,210 @@
+import '../models/player_model.dart';
+
+class MockPlayers {
+  MockPlayers._();
+
+  static final List<PlayerModel> all = [
+    PlayerModel(
+      name: "Mohamed Ali",
+      email: "mohamed@spotme.com",
+      phone: "01000000001",
+      sport: "Football",
+      position: "Midfielder",
+      age: 19,
+      height: 181,
+      weight: 72,
+      score: 89,
+      image: "",
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Karim Hassan",
+      email: "karim@spotme.com",
+      phone: "01000000002",
+      sport: "Football",
+      position: "Forward",
+      age: 21,
+      height: 178,
+      weight: 74,
+      score: 92,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Youssef Tarek",
+      email: "youssef@spotme.com",
+      phone: "01000000003",
+      sport: "Football",
+      position: "Defender",
+      age: 18,
+      height: 185,
+      weight: 78,
+      score: 86,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Ahmed Nabil",
+      email: "ahmed@spotme.com",
+      phone: "01000000004",
+      sport: "Football",
+      position: "Goalkeeper",
+      age: 20,
+      height: 188,
+      weight: 82,
+      score: 90,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Omar Samir",
+      email: "omar@spotme.com",
+      phone: "01000000005",
+      sport: "Basketball",
+      position: "Point Guard",
+      age: 19,
+      height: 188,
+      weight: 80,
+      score: 88,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Hassan Fathy",
+      email: "hassan@spotme.com",
+      phone: "01000000006",
+      sport: "Basketball",
+      position: "Center",
+      age: 22,
+      height: 205,
+      weight: 98,
+      score: 91,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Ziad Mostafa",
+      email: "ziad@spotme.com",
+      phone: "01000000007",
+      sport: "Basketball",
+      position: "Shooting Guard",
+      age: 18,
+      height: 192,
+      weight: 84,
+      score: 85,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Mahmoud Adel",
+      email: "mahmoud@spotme.com",
+      phone: "01000000008",
+      sport: "Handball",
+      position: "Left Wing",
+      age: 20,
+      height: 186,
+      weight: 85,
+      score: 87,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Ibrahim Salah",
+      email: "ibrahim@spotme.com",
+      phone: "01000000009",
+      sport: "Handball",
+      position: "Pivot",
+      age: 23,
+      height: 190,
+      weight: 92,
+      score: 90,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Tamer Khaled",
+      email: "tamer@spotme.com",
+      phone: "01000000010",
+      sport: "Handball",
+      position: "Goalkeeper",
+      age: 21,
+      height: 195,
+      weight: 95,
+      score: 84,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Nour El Din",
+      email: "nour@spotme.com",
+      phone: "01000000011",
+      sport: "Volleyball",
+      position: "Outside Hitter",
+      age: 19,
+      height: 195,
+      weight: 88,
+      score: 89,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Ramy Hosny",
+      email: "ramy@spotme.com",
+      phone: "01000000012",
+      sport: "Volleyball",
+      position: "Setter",
+      age: 20,
+      height: 188,
+      weight: 82,
+      score: 86,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+    PlayerModel(
+      name: "Khaled Amr",
+      email: "khaled@spotme.com",
+      phone: "01000000013",
+      sport: "Volleyball",
+      position: "Middle Blocker",
+      age: 22,
+      height: 202,
+      weight: 94,
+      score: 91,
+      image: "", 
+      club: '', 
+      experienceYears: 0,
+    ),
+  ];
+
+
+  static List<PlayerModel> bySport(String sport) {
+    return all.where((p) => p.sport == sport).toList();
+  }
+}
+
+
+class MockAccounts {
+  MockAccounts._();
+ 
+  static final Set<String> _registeredEmails = {};
+ 
+  static void register(String email) {
+    _registeredEmails.add(email.trim().toLowerCase());
+  }
+ 
+  static bool exists(String email) {
+    return _registeredEmails.contains(email.trim().toLowerCase());
+  }
+}
