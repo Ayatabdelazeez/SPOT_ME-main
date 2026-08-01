@@ -7,6 +7,7 @@ import '../../utils/app_colors.dart';
 import '../../utils/app_text_styles.dart';
 import 'recommended_players_screen.dart';
 import 'scout_notifications_screen.dart';
+import 'team_builder_screen.dart';
 //import '../../widgets/custom_card.dart';
 //import '../../widgets/custom_button.dart';
 
@@ -302,7 +303,59 @@ class ScoutDashboardScreen extends StatelessWidget {
                       ],
                     ),
 
-                    const SizedBox(height: 28),
+                    const SizedBox(height: 20),
+
+/////////////////// Team Builder CTA Banner
+                    InkWell(
+                      borderRadius: BorderRadius.circular(22),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const TeamBuilderScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          gradient: AppColors.dashboardGradient,
+                          borderRadius: BorderRadius.circular(22),
+                          boxShadow: AppColors.cardShadow,
+                          border: Border.all(color: AppColors.red.withOpacity(0.25)),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.red.withOpacity(.15),
+                              ),
+                              child: const Icon(Icons.groups_rounded, color: AppColors.red, size: 26),
+                            ),
+                            const SizedBox(width: 14),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Team Builder", style: AppTextStyles.titleMedium),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    "Let AI build a balanced squad for you",
+                                    style: TextStyle(fontSize: 12, color: Colors.white70),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const Icon(Icons.arrow_forward_ios_rounded, size: 14, color: Colors.white70),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 20),
 
 /////////////////// AI Recommended Section
                     Row(
