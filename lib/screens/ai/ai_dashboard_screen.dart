@@ -8,9 +8,10 @@ import 'ai_chat_screen.dart';
 import 'ai_feedback_screen.dart';
 import 'performance_graphs_screen.dart';
 
-import 'ai_cv_generator_screen.dart';
+import 'physical_coach_screen.dart';
+
+// import 'ai_cv_generator_screen.dart';
 import 'cv_chat_screen.dart';
-import 'ai_scout_screen.dart';
 
 class AiDashboardScreen extends StatelessWidget {
   const AiDashboardScreen({super.key});
@@ -230,22 +231,6 @@ class AiDashboardScreen extends StatelessWidget {
               const SizedBox(height: 18),
 
               CustomButton(
-                text: "AI Scout - Development Plan",
-                icon: Icons.emoji_events_outlined,
-                backgroundColor: AppColors.red,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const AiScoutScreen(),
-                    ),
-                  );
-                },
-              ),
-
-              const SizedBox(height: 15),
-
-              CustomButton(
                 text: "AI Feedback",
                 icon: Icons.analytics_outlined,
                 onPressed: () {
@@ -290,6 +275,20 @@ class AiDashboardScreen extends StatelessWidget {
               const SizedBox(height: 15),
 
 CustomButton(
+                text: "Physical Coach",
+                icon: Icons.sports_gymnastics_outlined,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const PhysicalCoachScreen(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 15),
+
+CustomButton(
   text: "AI CV Generator",
   icon: Icons.description_outlined,
   onPressed: () {
@@ -310,3 +309,7 @@ CustomButton(
     );
   }
 }
+
+
+
+
