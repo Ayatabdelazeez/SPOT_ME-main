@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../screens/ai/ai_chat_screen.dart';
 import '../screens/ai/ai_dashboard_screen.dart';
+import '../screens/ai/ai_scout_screen.dart';
+import '../screens/scout/team_builder_screen.dart';
 import '../screens/auth/forgot_password_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/onboarding_screen.dart';
@@ -51,6 +53,8 @@ class AppPages {
     AppRoutes.playerProfile: (_) => throw UnimplementedError(),
     AppRoutes.aiDashboard: (_) => const AiDashboardScreen(),
     AppRoutes.aiChat: (_) => const AiChatScreen(),
+    AppRoutes.aiScout: (_) => const AiScoutScreen(),
+    AppRoutes.teamBuilder: (_) => const TeamBuilderScreen(),
     AppRoutes.scoutDashboard: (_) => const ScoutDashboardScreen(),
     AppRoutes.navigation: (_) => throw UnimplementedError(),
     AppRoutes.settings: (_) => const SettingsScreen(),
