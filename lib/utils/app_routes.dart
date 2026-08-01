@@ -14,6 +14,8 @@ class AppRoutes {
   static const playerProfile = "/playerProfile";
   static const aiDashboard = "/aiDashboard";
   static const aiChat = "/aiChat";
+  static const aiScout = "/aiScout";
+  static const teamBuilder = "/teamBuilder";
   static const about = "/about";
   static const scoutDashboard = "/scoutDashboard";
   static const navigation = "/navigation";
