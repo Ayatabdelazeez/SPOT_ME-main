@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotme/models/player_model.dart';
 import 'package:spotme/screens/scout/report_dialog.dart';
+import 'package:spotme/screens/scout/request_contact_screen.dart';
 
 import '../../utils/app_colors.dart';
 import '../../utils/app_text_styles.dart';
@@ -158,7 +159,14 @@ class PlayerCvScreen extends StatelessWidget {
             CustomButton(
               text: "Contact Player",
               icon: Icons.chat_outlined,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RequestContactScreen(player: dummyPlayer), 
+                  ),
+                );
+              },
             ),
 
             const SizedBox(height: 15),
