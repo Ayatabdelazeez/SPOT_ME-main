@@ -11,7 +11,9 @@ class PlayerModel {
   final String image;
   final String club;
   final int experienceYears;
-
+  final int violationsCount;
+  final bool isBlocked;
+  
   PlayerModel({
     required this.name,
     required this.email,
@@ -25,6 +27,28 @@ class PlayerModel {
     required this.image,
     required this.club,
     required this.experienceYears,
-
+    this.violationsCount = 0, 
+    this.isBlocked = false,
   });
+  PlayerModel copyWith({
+    int? violationsCount,
+    bool? isBlocked,
+  }) {
+    return PlayerModel(
+      name: name,
+      email: email,
+      phone: phone,
+      sport: sport,
+      position: position,
+      age: age,
+      height: height,
+      weight: weight,
+      score: score,
+      image: image,
+      club: club,
+      experienceYears: experienceYears,
+      violationsCount: violationsCount ?? this.violationsCount,
+      isBlocked: isBlocked ?? this.isBlocked,
+    );
+  }
 }
