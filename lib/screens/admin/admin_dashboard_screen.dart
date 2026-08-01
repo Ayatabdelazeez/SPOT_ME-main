@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../../models/admin_stats.dart';
+import 'package:spotme/models/player_model.dart';
+//import '../../models/admin_stats.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_routes.dart';
 import '../../utils/app_text_styles.dart';
 import '../../widgets/admin_stat_card.dart';
 import '../../widgets/custom_app_bar.dart';
-
+import 'admin_reports_screen.dart';
+import 'admin_users_list_screen.dart';
 
 
 class AdminDashboardScreen extends StatelessWidget {
@@ -14,8 +15,25 @@ class AdminDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ⚠️ أرقام تجريبية (Demo) لحد ما يتربط المشروع بباك اند حقيقي.
-    const stats = AdminStats.demo;
+    //const stats = AdminStats.demo;
+
+    final List<PlayerModel> allPlayers = [
+      PlayerModel(name: "Ahmed Mohamed", email: "", phone: "", sport: "Football", position: "Forward", age: 20, height: 182, weight: 76, score: 91, image: "", club: "Future FC", experienceYears: 7),
+      PlayerModel(name: "Khaled Ali", email: "", phone: "", sport: "Football", position: "Midfielder", age: 22, height: 175, weight: 70, score: 85, image: "", club: "Zamalek", experienceYears: 4, violationsCount: 1),
+      PlayerModel(name: "Omar Hassan", email: "", phone: "", sport: "Basketball", position: "Guard", age: 19, height: 190, weight: 82, score: 88, image: "", club: "Ahly FC", experienceYears: 3),
+    ];
+
+    final List<Map<String, String>> allScouts = [
+      {"name": "Captain Mahmoud", "club": "Ahly FC"},
+      {" name": "Coach Hazem", "club": "Zamalek Youth"},
+      {"name": "Scout Reda", "club": "Pyramids FC"},
+    ];
+
+    final pendingReportsCount = allPlayers.where((p) => p.violationsCount > 0 || p.isBlocked).length;
+
+    final totalPlayersCount = allPlayers.length;
+    final totalScoutsCount = allScouts.length;
+    final activeSubscriptionsCount = 12;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -43,7 +61,6 @@ class AdminDashboardScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // ترحيب
               Row(
                 children: [
                   Container(
@@ -62,7 +79,7 @@ class AdminDashboardScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Welcome, Admin 👋", style: AppTextStyles.heading3),
+                      Text("Welcome, Admin", style: AppTextStyles.heading3),
                       const SizedBox(height: 2),
                       Text(
                         "Here's what's happening in SpotMe",
@@ -80,7 +97,6 @@ class AdminDashboardScreen extends StatelessWidget {
               Text("Overview", style: AppTextStyles.sectionTitle),
               const SizedBox(height: 14),
 
-              // كروت الإحصائيات
               GridView.count(
                 crossAxisCount: 2,
                 shrinkWrap: true,
@@ -89,29 +105,69 @@ class AdminDashboardScreen extends StatelessWidget {
                 mainAxisSpacing: 14,
                 childAspectRatio: 1.35,
                 children: [
-                  AdminStatCard(
-                    title: "Total Players",
-                    value: "${stats.totalPlayers}",
-                    icon: Icons.sports_soccer,
-                    gradient: AppColors.blueGradient,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AdminUsersListScreen(roleTitle: "Registered Players"),
+                        ),
+                      );
+                    },
+                    child: AdminStatCard(
+                      title: "Total Players",
+                      value: "$totalPlayersCount",
+                      icon: Icons.sports_soccer,
+                      gradient: AppColors.blueGradient,
+                    ),
                   ),
-                  AdminStatCard(
-                    title: "Total Scouts",
-                    value: "${stats.totalScouts}",
-                    icon: Icons.remove_red_eye_outlined,
-                    gradient: AppColors.redGradient,
+                  
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AdminUsersListScreen(roleTitle: "Registered Scouts"),
+                        ),
+                      );
+                    },
+                    child: AdminStatCard(
+                      title: "Total Scouts",
+                      value: "$totalScoutsCount",
+                      icon: Icons.remove_red_eye_outlined,
+                      gradient: AppColors.redGradient,
+                    ),
                   ),
-                  AdminStatCard(
-                    title: "Active Subscriptions",
-                    value: "${stats.activeSubscriptions}",
-                    icon: Icons.workspace_premium_outlined,
-                    gradient: AppColors.blueGradient,
+
+                  InkWell(
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Subscriptions: 12 Premium Clubs / 33 Scouts active")),
+                      );
+                    },
+                    child: AdminStatCard(
+                      title: "Active Subscriptions",
+                      value: "$activeSubscriptionsCount",
+                      icon: Icons.workspace_premium_outlined,
+                      gradient: AppColors.blueGradient,
+                    ),
                   ),
-                  AdminStatCard(
-                    title: "Pending Reports",
-                    value: "${stats.pendingReports}",
-                    icon: Icons.flag_outlined,
-                    gradient: AppColors.redGradient,
+
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AdminReportsScreen(),
+                        ),
+                      );
+                    },
+                    child: AdminStatCard(
+                      title: "Pending Reports",
+                      value: "$pendingReportsCount",
+                      icon: Icons.flag_outlined,
+                      gradient: AppColors.redGradient,
+                    ),
                   ),
                 ],
               ),
